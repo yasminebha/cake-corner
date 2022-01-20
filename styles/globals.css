@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.circle {
+    @apply aspect-square  flex items-center justify-center rounded-full hover:shadow-xl transition duration-300 ;
+}
+
+
+* {
+    font-family: 'Inter', sans-serif;
+    
+}
+.pacifico{
+    font-family: 'Pacifico', cursive;
+}
+
+html{
+    scroll-behavior: smooth;
+}

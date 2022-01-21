@@ -1,8 +1,14 @@
 import Head from 'next/head'
 import { Navbar } from '../components/navbar'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Autoplay, Navigation } from 'swiper';
+SwiperCore.use([Autoplay, Navigation])
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
+import { useRef } from 'react';
 
 export default function Home() {
+  const testNavLeft = useRef(null)
+  const testNavRight = useRef(null)
   return (
     <div>
       <Head>
@@ -16,31 +22,55 @@ export default function Home() {
           <div className='min-h-screen flex justify-center mx-auto px-16 gap-10  text-center h-full bg-gradient-to-b from-gray-600/60 to-gray-200/40'>
 
             <div className=' items-center flex flex-col justify-center my-auto h-full order-first gap-10 mx-20 '>
-              <h1 className='text-black text-6xl  mt-auto font-black'>
+              <h1 className='text-black text-6xl lobster mt-auto font-black '>
                 Well being of our clients first!
               </h1>
-              <a href="#test" className='mt-auto bg-[#425c4e] mx-auto px-6 py-4 rounded-xl text-white font-medium hover:bg-[#978f83] transition duration-300'>Explore Us</a>
+              {/* button */}
+              <a href=' ' className={' p-2 relative  overflow-hidden group text-sm'}>
+                <span className=" absolute text-md bg-black  inset-x-0 h-[2px] bottom-0 group-hover:opacity-100 translate-x-full ml-20 group-hover:ml-0 group-hover:translate-x-0 transition-all duration-300"> </span>
+                <span className="relative font-medium text-xl">Explore us</span>
+              </a>
             </div>
           </div>
         </div>
-        <div id='test' className=' bg-gray-50 text-center scroll-mt-20 py-20 space-y-5'>
+        {/* products */}
+        <div id='test' className='  text-center scroll-mt-20 py-20 space-y-5'>
           <h1 className='text-5xl'>clients choose us</h1>
           <h2 className='text-xl text-gray-600'>Discover The Art Of Sweetness ,Choose Your Favorite Product</h2>
           <div className='grid md:grid-cols-4 gap-10 px-20 !mt-20'>
-            <div className='circle bg-orange-200'>
-              <img className='w-20' src='images/pngable_dessert-icon-desserts-and-candies-icon-pudding-icon.png'></img>
+
+            <div className="flex flex-col gap-4">
+              <div className='circle bg-orange-200'>
+                <img className='w-1/3' src='images/transparent-wedding-cake-icon-cake-icon-family-icon-5f628d45c49311.5451545216002942138052.png'></img>
+              </div>
+              <h3 className='pacifico text-2xl first-letter:uppercase'>cakes</h3>
             </div>
-            <div className='bg-sky-200 circle'>
-              <img className='w-20' src='images/transparent-gastronomy-icon-muffin-icon-cupcake-icon-5f946322a295c1.878142701603560226666.png'></img>
+
+
+            <div className='flex flex-col gap-4'>
+              <div className='bg-[#d0e2d8] circle'>
+                <img className='w-1/3' src='images/transparent-gastronomy-icon-muffin-icon-cupcake-icon-5f946322a295c1.878142701603560226666.png'></img>
+              </div>
+              <h3 className='pacifico text-2xl first-letter:uppercase'>cupcakes</h3>
             </div>
-            <div className='bg-fuchsia-200 circle'>
-              <img className='w-20' src='images/transparent-dessert-and-candies-icon-cheesecake-icon-cake-icon-604a8785cce064.5668002616154970938392.png'></img>
+
+            <div className='flex flex-col gap-4'>
+              <div className='bg-[#e4d4c0] circle'>
+                <img className='w-1/3' src='images/transparent-dessert-and-candies-icon-cheesecake-icon-cake-icon-604a8785cce064.5668002616154970938392.png'></img>
+              </div>
+              <h3 className='pacifico text-2xl first-letter:uppercase'>cheesecakes</h3>
             </div>
-            <div className='bg-purple-300 circle'>
-              <img className='w-20' src='images/transparent-wedding-cake-icon-cake-icon-family-icon-5f628d45c49311.5451545216002942138052.png'></img>
+
+            <div className='flex flex-col gap-4'>
+              <div className='bg-[#bec5bf] circle'>
+                <img className='w-1/3' src='images/pngable_dessert-icon-desserts-and-candies-icon-pudding-icon.png'></img>
+              </div>
+              <h3 className='pacifico text-2xl first-letter:uppercase'>desserts</h3>
             </div>
+
           </div>
         </div>
+
         {/* testimonials */}
         <div className='bg-[rgb(208,224,216)]'>
           <div className='container mx-auto px-16 gap-10  grid grid-cols-2'>
@@ -50,20 +80,61 @@ export default function Home() {
               <p className='opacity-75'>Since 1993 cake corner has provided Brooklyn, Bushwick, and the rest of the country with the best in Wedding Cakes, Birthday Cakes Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita similique quod illum velit sed alias numquam reprehenderit nemo eveniet quae eum vel, aliquam excepturi ea, assumenda possimus praesentium amet est.</p>
             </div>
             {/* col2 */}
-            <div className='bg-[rgb(173,204,188)]'>
-              <Swiper
+            <div className='bg-[rgb(173,204,188)] flex flex-col gap-5 py-20 px-10 overflow-hidden'>
+              <h1 className='pacifico text-4xl  text-white'>Testimonials</h1>
+
+              <img className='w-[60px]' src="images/transparent-review-icon-feedback-and-testimonials-icon-testimo-5dc8fc753daf66.5488601215734529172527.png" />
+              <div className="flex justify-end gap-2 mb-4">
+                <button ref={testNavLeft} className='disabled:bg-transparent disabled:opacity-50 text-white text-2xl p-1 rounded-full hover:bg-white/20'>
+                  <FiArrowLeft />
+                </button>
+                <button ref={testNavRight} className='disabled:bg-transparent disabled:opacity-50 text-white text-2xl p-1 rounded-full hover:bg-white/20'>
+                  <FiArrowRight />
+                </button>
+              </div>
+              <Swiper className='h-full w-full'
+                modules={[Autoplay]}
+                autoplay={{
+                  delay: 3000,
+                }}
+                loop
                 spaceBetween={50}
                 slidesPerView={1}
+                onInit={(swiper) => {
+                  swiper.params.navigation.prevEl = testNavLeft.current
+                  swiper.params.navigation.nextEl = testNavRight.current
+                  swiper.navigation.init()
+                  swiper.navigation.update()
+                }}
+                navigation={{
+                  prevEl: testNavLeft.current,
+                  nextEl: testNavRight.current,
+                }}
+
               >
-                <SwiperSlide className=''></SwiperSlide>
+                <SwiperSlide className='text-white text-4xl flex flex-col gap-10'>
+                  <p>love your products, the quality has been incredible year after year.I tell everyone I know that they have to try cake corner</p>
+                  <span>Bailey H.</span>
+                </SwiperSlide>
+                <SwiperSlide className='text-white text-4xl flex flex-col gap-10'>
+                  <p>love your products, the quality has been incredible year after year.I tell everyone I know that they have to try cake corner</p>
+                  <span>Bailey H.</span>
+                </SwiperSlide>
+                <SwiperSlide className='text-white text-4xl flex flex-col gap-10'>
+                  <p>love your products, the quality has been incredible year after year.I tell everyone I know that they have to try cake corner</p>
+                  <span>Bailey H.</span>
+                </SwiperSlide>
+
 
               </Swiper>
-
-
 
             </div>
           </div>
         </div>
+
+        {/* hot selling products */}
+
+        <div></div>
 
 
 

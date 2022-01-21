@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react"
 
-const linkClass = "uppercase p-2 rounded-md relative  overflow-hidden group text-sm"
+const linkClass = " p-2 rounded-md relative  overflow-hidden group text-sm"
 
 const items = [
     {
-        name: "HOME",
+        name: "Home",
         href: "#top"
     },
     {
-        name: "PRODUCTS",
+        name: "Products",
         href: "#test"
     },
 
     {
-        name: "ORDER",
+        name: "Order",
         href: "#1"
     },
     {
-        name: "ABOUT US",
+        name: "About",
         href: "#2"
     },
     {
-        name: "CONTACT",
+        name: "Contact",
         href: "#3"
     },
 ]
@@ -37,8 +37,8 @@ export const Navbar = () => {
     },[])
 
 
-    return (<nav id="nav" className={`gap-4 flex items-center py-4 px-20  fixed inset-x-0 transition-all duration-500 ${scrollY>80 ? 'bg-white h-20':'h-24 '}`}>
-        <span className="mr-auto text-4xl ml-10 pacifico">cake corner</span>
+    return (<nav id="nav" className={`gap-4 flex items-center py-4 px-20 z-50  fixed inset-x-0 transition-all duration-500 ${scrollY>80 ? 'bg-white h-20':'h-24 '}`}>
+        <span className="mr-auto text-4xl ml-10 pacifico">Cake Corner</span>
         {
             items.map((item) => {
                 return <a key={item.href} href={item.href} className={linkClass}>

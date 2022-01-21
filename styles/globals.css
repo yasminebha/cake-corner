@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 .circle {
-    @apply aspect-square  flex items-center justify-center rounded-full hover:shadow-xl transition duration-300 ;
+    @apply aspect-square  flex items-center justify-center cursor-pointer rounded-full hover:shadow-2xl transition duration-300 ;
 }
+
 
 
 * {
@@ -14,6 +15,10 @@
 .pacifico{
     font-family: 'Pacifico', cursive;
 }
+.lobster{
+    font-family: 'Lobster', cursive;
+}
+
 
 html{
     scroll-behavior: smooth;

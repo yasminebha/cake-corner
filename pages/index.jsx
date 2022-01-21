@@ -3,12 +3,22 @@ import { Navbar } from '../components/navbar'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 SwiperCore.use([Autoplay, Navigation])
-import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
-import { useRef } from 'react';
+import { FiArrowLeft, FiArrowRight, FiChevronUp } from 'react-icons/fi'
+import { useEffect, useRef, useState } from 'react';
+import Product from '../components/Product';
 
 export default function Home() {
   const testNavLeft = useRef(null)
   const testNavRight = useRef(null)
+
+  const [scrollY, setScrollY] = useState()
+
+  useEffect(() => {
+    window.onscroll = function () {
+      setScrollY(window.scrollY)
+    }
+  }, [])
+
   return (
     <div>
       <Head>
@@ -17,6 +27,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      {scrollY > 200 &&
+        <button onClick={() => {
+          window.scrollTo(0, 0)
+        }} className='fixed bottom-5 right-10 z-50 bg-white p-2 rounded-full text-3xl hover:bg-gray-100'>
+          <FiChevronUp />
+        </button>
+
+      }
+
       <main >
         <div className='min-h-screen  bg-cover bg-[url("/images/pexels-carlie-wright-6346166.jpg")]'>
           <div className='min-h-screen flex justify-center mx-auto px-16 gap-10  text-center h-full bg-gradient-to-b from-gray-600/60 to-gray-200/40'>
@@ -133,8 +152,16 @@ export default function Home() {
         </div>
 
         {/* hot selling products */}
+        <div className="container mx-auto text-center pt-20 max-w-screen-xl text-[#83a59d] capitalize">
+          <h1 className='text-5xl'>hot selling products </h1>
+        </div>
+        <div className="grid grid-cols-4 container mx-auto py-20 max-w-screen-xl">
+          <Product src="images/image/lemon-pound-cake.jpg" price={35} name={'lemon pound cake'} />
+          <Product src={"images/image/pexels-kristina-paukshtite-1998633.jpg"} price={5} name={'mini chocolate'} />
+          <Product src={"images/image/pexels-roman-odintsov-5897462.jpg"} price={6} name={'Raspberry Crumble Bar'} />
+          <Product src={"images/image/pexels-amanda-lim-8774191.jpg"} price={40} name={'Chocolate Matcha Suiss Roll'} />
+        </div>
 
-        <div></div>
 
 
 

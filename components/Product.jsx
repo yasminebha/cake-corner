@@ -1,4 +1,4 @@
-export default({src,name,price})=>{
+export default function Product({src,name,price}){
     return <div className="flex flex-col max-w-[280px] gap-2 mx-auto relative group rounded-xl overflow-hidden">
         <img className="" src={src} />
         <div className=" absolute inset-0 flex flex-col justify-center bg-black/50 text-white opacity-0 group-hover:opacity-100 transition duration-300 ">

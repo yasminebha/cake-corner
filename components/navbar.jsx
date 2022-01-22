@@ -28,16 +28,21 @@ const items = [
 
 export const Navbar = () => {
 
-    const [scrollY,setScrollY] = useState()
+    const [scrollY, setScrollY] = useState()
 
-    useEffect(()=>{
-        window.onscroll = function(){
-            setScrollY(window.scrollY)
+    const handleScroll = () => {
+        setScrollY(window.scrollY)
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
         }
-    },[])
+    }, [])
 
 
-    return (<nav id="nav" className={`gap-4 flex items-center py-4 px-20 z-50  fixed inset-x-0 transition-all duration-500 ${scrollY>80 ? 'bg-white h-20':'h-24 '}`}>
+    return (<nav id="nav" className={`gap-4 flex items-center py-4 px-20 z-50  fixed inset-x-0 transition-all duration-500 ${scrollY > 80 ? 'bg-[#fff] h-20' : 'h-24 '}`}>
         <span className="mr-auto text-4xl ml-10 pacifico">Cake Corner</span>
         {
             items.map((item) => {
@@ -47,8 +52,5 @@ export const Navbar = () => {
                 </a>
             })
         }
-
-
-
     </nav>)
 }

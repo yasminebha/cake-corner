@@ -2,27 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-.circle {
-    @apply aspect-square  flex items-center justify-center cursor-pointer rounded-full hover:shadow-2xl transition duration-300 ;
-}
-
-
 
 * {
     font-family: 'Inter', sans-serif;
-    
 }
-.pacifico{
+
+html {
+    scroll-behavior: smooth;
+}
+
+.circle {
+    @apply aspect-square flex items-center justify-center cursor-pointer rounded-full hover:shadow-2xl transition duration-300;
+}
+
+.pacifico {
     font-family: 'Pacifico', cursive;
 }
-.lobster{
+
+.lobster {
     font-family: 'Lobster', cursive;
 }
-.montserrat{
+
+.montserrat {
     font-family: 'Montserrat', sans-serif;
 }
 
-
-html{
-    scroll-behavior: smooth;
-}

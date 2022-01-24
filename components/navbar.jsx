@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const linkClass = " p-2 rounded-md relative  overflow-hidden group text-sm"
+const linkClass = " p-2 rounded-md relative text-white overflow-hidden mix-blend-exclusion  group text-sm"
 
 const items = [
     {
@@ -42,8 +42,8 @@ export const Navbar = () => {
     }, [])
 
 
-    return (<nav id="nav" className={`gap-4 flex items-center py-4 px-20 z-50  fixed inset-x-0 transition-all duration-500 ${scrollY > 80 ? 'bg-[#fff] h-20' : 'h-24 '}`}>
-        <span className="mr-auto text-4xl ml-10 pacifico">Cake Corner</span>
+    return (<nav id="nav" className={`gap-4 flex items-center  py-4 px-20 z-50 fixed inset-x-0 transition-all duration-500 ${scrollY > 80 ? 'bg-[#fff] h-20' : 'h-24 '}`}>
+        <span className="mr-auto text-4xl ml-10 pacifico text-white mix-blend-exclusion ">Cake Corner</span>
         {
             items.map((item) => {
                 return <a key={item.href} href={item.href} className={linkClass}>

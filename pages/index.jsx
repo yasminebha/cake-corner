@@ -33,7 +33,7 @@ export default function Home() {
           <div className='min-h-screen flex justify-center mx-auto px-16 gap-10  text-center h-full bg-gradient-to-b from-[#2e2e2e79] to-[#4949495d]'>
 
             <div className=' items-center flex flex-col justify-center my-auto h-full order-first gap-10 mx-20 '>
-              <h1 className='text-black text-6xl lobster mt-auto font-black '>
+              <h1 className='text-white text-6xl lobster mt-auto font-black '>
                 Well being of our clients first!
               </h1>
               {/* button */}
@@ -99,7 +99,7 @@ export default function Home() {
                 }}
 
               >
-                <SwiperSlide className='text-[#fff] text-4xl flex flex-col gap-10'>
+                <SwiperSlide className='text-white text-4xl flex flex-col gap-10'>
                   <p>love your products, the quality has been incredible year after year.I tell everyone I know that they have to try cake corner</p>
                   <span>Bailey H.</span>
                 </SwiperSlide>
